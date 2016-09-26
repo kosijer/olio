@@ -1,0 +1,12 @@
+      <div class="row">
+        <div class="col-xs-8 col-md-9 col-lg-10">
+          <div class="input-group input-group-sm">
+            <span class="input-group-addon glyphicon glyphicon-search" id="search-field"></span>
+            <input type="text" class="form-control" placeholder="Search for a product" aria-describedby="search-field" ng-model="searchquery">
+          </div>
+        </div>
+        <div class="col-xs-4 col-md-3 col-lg-2">          
+            <input id="show-expired" name="show-expired" type="checkbox" ng-model="filterExpired" ng-init="filterExpired = false" ng-true-value="true" ng-false-value="false"/>
+            <label for="show-expired" class="glyphicon glyphicon-eye-close show-expired" title="Show Expired Products"></label> 
+        </div>         
+      </div>

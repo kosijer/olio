@@ -1,5 +1,9 @@
 /* app css stylesheet */
 
+body {
+	padding-top: 100px;
+}
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
@@ -22,4 +26,329 @@
 .menu > li + li:before {
   content: "|";
   padding-right: 0.3em;
+}
+
+.product {
+	padding: 1%!important;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+product-panel {
+	margin: 20px 0;
+    display: block;
+}
+
+product-template {
+    margin: 0;
+    overflow: hidden;
+    display: block;
+    border: 2px solid #efefef;
+    padding: 10% 15% 5%;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 0 2px 2px #e0e0e0;
+    position: relative;
+    background: #fff;
+}
+
+.expired {
+	opacity:0.75;
+}
+
+.product h3, .product span {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.product h3 { 
+	color: #4a4a4a;
+    font-size: 18px;
+}
+.product p {
+    color: #5c5c5c;
+    height: 57px;
+    overflow: hidden;
+    font-size: 13px;
+}
+.product span { color: #acacac; }
+
+.add-product {background: #007d75;}
+.add-product a {font-weight: bold;}
+.add-product span {
+    font-size: 40px;
+    position: relative;
+    margin: -10px 10px;
+    float: right;
+}
+
+.label-olio {
+  background-color: #f4f4f4;
+}
+.label-olio[href]:hover,
+.label-olio[href]:focus {
+  background-color: #798d8f;
+}
+
+.show-map {cursor:pointer;}
+
+.show-expired:before {
+    font-size: 20px;
+    margin: 3px 15px 2px;
+    display: block;
+    float: left;
+}
+
+iframe {border:none;}
+
+search-bar input[type=checkbox] {
+	display:none;
+}
+ 
+search-bar input[type=checkbox] + label.show-expired
+{
+    background: #ecf0f1;
+    display: inline-block;
+    padding: 4px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 3px;
+    border: 1px solid #dce4ec;
+    margin: 0;
+    color: #6d6d6d;
+}
+search-bar input[type=checkbox]:checked + label.show-expired
+{
+    background: #e2e4e5;
+    display: inline-block;
+    padding: 4px;
+    border: 1px solid #dce4ec;
+    color: #555;
+}
+
+
+search-bar input[type=checkbox]:checked + label.show-expired:after ,
+search-bar input[type=checkbox] + label.show-expired:after {
+    content: 'Just Gone';
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    padding-top: 8px;
+    display: block;
+    font-weight: bold;
+}
+search-bar input[type=checkbox]:checked + label.show-expired:after {content:'Browse';}
+search-bar input[type=checkbox]:checked + label.show-expired:before {content: "\e012";}
+
+#addItemModal .modal-dialog {
+  width: 98%;
+  max-width: 1440px;
+  padding: 0;
+}
+
+
+#addItemModal .modal-body {
+  overflow: hidden;
+}
+
+.user-info .user-image img {
+    width: 100%;
+    width: calc(100% + 10px);
+    border-radius: 50%;
+    border:1px solid #bcbcbc;
+}
+
+.user-info img:hover {	
+    border:1px solid #000;
+}
+
+.user-info>div {
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.user-name {
+	padding-left: 0!important;
+	font-size:13px;
+	text-align:left;
+}
+
+.user-name a {
+    padding: 7px;
+    display: block;
+	transition: all 0.2s ease-out;
+}
+.user-name a:hover {
+    color:black;
+    text-decoration: none;
+	transition: all 0.2s ease-out;
+}
+
+.user-image a {
+	display:block;
+}
+.user-image a img{
+	border-radius: 50%;
+	width: 100%;
+	max-width: 80px;
+}
+
+product-template .btn {
+	margin: 14% -20% -7%;
+    width: 140%;
+}
+
+.large-image-modal {
+	display: block;
+    margin: 30px auto;
+}
+
+.image-tn-div:before {
+	opacity: 0;
+    position: absolute;
+    z-index: 1;
+    padding: 40px;
+    font-size: 30px;
+    background: rgba(255,255,255,0.3);
+    margin: -14px;
+    cursor: pointer;
+	transition: all 0.5s ease-out;
+	color:white;
+}
+
+.image-tn-div:hover:before {
+	opacity:1;
+	color:white;
+	transition: all 0.2s ease-out;
+}
+
+.liked {
+	position: absolute!important;
+    top: 10px!important;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.label-olio {
+    color: #6d6d6d!important;
+    font-weight: normal!important;
+}
+
+.nav-profile-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: -14.5px;
+    float: right;
+    position: relative;
+    top: 0;
+    right: 0;
+    margin-left: 5px;
+    margin-right: -5px;
+}
+
+.large-image {
+    width: 100%;
+}
+
+.main-product-info {
+	margin: 0;
+    overflow: hidden;
+    display: block;
+    border: 2px solid #efefef;
+    padding: 1% 1% 0;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 0 2px 2px #e0e0e0;
+    position: relative;
+    background: #fff;
+}
+
+.info-overlay {
+    width: calc(100% + 30px);
+    text-align: left;
+    background: #acacac;
+    overflow: hidden;
+    color: white;
+    margin-top: 30px;
+}
+
+.like-unlike {
+	font-size: 24px;
+    cursor: pointer;
+    margin-top: 2px;
+}
+
+.fb-twitt {
+    height: 26px;
+    margin-top: 3px;
+    float: left;
+    margin-right: 3px;
+    cursor:pointer;
+}
+.fb-twitt-share {
+	margin-top: 10px;
+    float: left;
+    margin-right: 10px;
+}
+
+
+
+.info-overlay a, .info-overlay a:hover, .info-overlay a:focus {
+    color: white;
+    text-align: right;
+    margin-top: 5px;
+    display: block;
+}
+
+.user-block{margin-top:30px;}
+.user-block .user-name {font-size:20px;}
+.user-block .user-name span {font-size:15px;}
+.user-block .user-name a {padding:0;}
+
+#productPicture {margin-bottom:20px;}
+
+.photo-preview {
+	width: 130px;
+    height: 130px;
+    background: #d9d9d9;
+    font-size: 30px;
+    color: white;
+    padding: 45px;
+    text-align: center;
+    border: 2px dotted #c6c6c6;
+    float: right;
+}
+
+@media only screen and (max-width: 979px) {
+    .product {
+        width:98%;
+        margin:1%;
+    }
+
+    .nav-profile-photo {
+	    width: 30px;
+	    height: 30px;
+	    margin-top: -5px;
+	}
+
+	.add-product span {
+	    font-size: 30px;
+	    margin: -5px;
+	    float: right;
+	}
+}
+
+
+
+@media only screen and (max-width: 767px) {
+	.navbar-nav {
+	    margin: 0 -15px!important;
+	}
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    	color: #F5A531;    
+	}
 }

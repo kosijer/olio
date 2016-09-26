@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-xs-8 col-md-9 col-lg-10">
+    <div class="panel" ng-show="panel.isSelected(1)">
+      <div class="product col-md-3" ng-model="searchquery" ng-repeat="product in olio.products | filter:searchquery | filter:{expired:filterExpired}" ng-show="product.section == 'food'" ng-class="{ expired:product.expired === true }">
+        <product-template></product-template>
+      </div>
+    </div>
+
+    <div class="panel" ng-show="panel.isSelected(2)">
+      <div class="product col-md-3" ng-model="searchquery" ng-repeat="product in olio.products | filter:searchquery | filter:{expired:filterExpired}" ng-show="product.section == 'non-food'" ng-class="{ expired:product.expired === true }">
+        <product-template></product-template>
+      </div>
+    </div>
+
+    <div class="panel" ng-show="panel.isSelected(3)">
+      <div class="product col-md-3" ng-model="searchquery" ng-repeat="product in olio.products | filter:searchquery | filter:{expired:filterExpired}" ng-class="{ expired:product.expired === true }">
+        <product-template></product-template>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-4 col-md-3 col-lg-2">
+  <search-filter></search-filter>
+  </div>
+</div>

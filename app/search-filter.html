@@ -1,0 +1,122 @@
+<h4><strong>Refine your results</strong></h4>
+<hr/>
+<form class="form-horizontal">
+
+	<h4>Location</h4>
+    <span class="help-block label label-olio">Change postcode / location</span>
+    <div>
+      <input name="product.title" id="productTitle" type="text" class="form-control" placeholder="Enter the title of your item" value="{{olio.currentuser.postcode}}" />
+    </div>
+
+		<div class="checkbox">
+		    <label>
+		      <input type="checkbox" name="dropbox"> Dropbox only
+		    </label>
+	  	</div>
+	  <div class="radio">
+	    <label>
+	      <input type="radio" name="radius" value="all" checked> All
+	    </label>
+	  </div>
+      <div class="radio">
+	    <label>
+	      <input type="radio" name="radius" id="productSection" value="5mi"> 5 miles radius
+	    </label>
+	  </div>
+	  <div class="radio">
+	    <label>
+	      <input type="radio" name="radius" value="10mi"> 10 miles radius
+	    </label>
+	  </div>
+	  <div class="radio">
+	    <label>
+	      <input type="radio" name="radius" value="25mi"> 25 miles radius
+	    </label>
+	  </div>
+
+	  <hr/>
+
+	<h4>Price</h4>
+
+		<div class="checkbox">
+		    <label>
+		      <input type="checkbox" name="freeitems" checked> Free Items
+		    </label>
+	  	</div>
+
+		<div class="checkbox">
+		    <label>
+		      <input type="checkbox" name="donation" checked> Donation
+		    </label>
+	  	</div>
+
+		<div class="checkbox">
+		    <label>
+		      <input type="checkbox" name="price" checked> Price
+		    </label>
+	  	</div>
+
+
+	  <hr/>
+
+	<h4>Favorites</h4>
+
+
+		<div class="checkbox">
+		    <label>
+		      <input type="checkbox" name="liked"> Show only objects I liked
+		    </label>
+	  	</div>
+
+	  <hr/>
+
+	<h4>Show items from</h4>
+
+
+		<div class="checkbox">
+		    <label>
+		      <input type="checkbox" name="consumers" checked> Consumers
+		    </label>
+	  	</div>
+
+		<div class="checkbox">
+		    <label>
+		      <input type="checkbox" name="heroes" checked> Food Waster Heroes
+		    </label>
+	  	</div>
+
+		<div class="checkbox">
+		    <label>
+		      <input type="checkbox" name="volunteers" checked> Volunteers
+		    </label>
+	  	</div>
+
+		<div class="checkbox">
+		    <label>
+		      <input type="checkbox" name="ambassadors" checked> Ambassadors
+		    </label>
+	  	</div>
+
+		<div class="checkbox">
+		    <label>
+		      <input type="checkbox" name="community" checked> Community Leads
+		    </label>
+	  	</div>
+
+	  <hr/>
+
+	<h4>Condition</h4>
+
+
+		<div class="checkbox">
+		    <label>
+		      <input type="checkbox" name="new" checked> New / Unopened
+		    </label>
+	  	</div>
+
+		<div class="checkbox">
+		    <label>
+		      <input type="checkbox" name="used" checked> Used
+		    </label>
+	  	</div>
+</form>

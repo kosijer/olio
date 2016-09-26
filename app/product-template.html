@@ -1,0 +1,27 @@
+          <div class="row">
+            <span ng-show="product.user_has_liked" class="glyphicon glyphicon-heart liked"></span>
+            <span ng-hide="product.user_has_liked" class="glyphicon glyphicon-heart-empty liked"></span>
+            <div class="image-tn-div glyphicon glyphicon-search" ng-click="olio.showImage(product.photos[0].files.original,product.title)">
+              <img class="image-tn" title="{{ product.title }}" ng-src="{{ product.photos[0].files.small }}" />              
+            </div>
+            <div class="info-block">
+              <h3><a href="/#/product/{{product.id}}" title="{{ product.title }}">{{ product.title }}</a></h3>
+              <p>{{ product.description  | limitTo: 80 }}{{product.description.length > 80 ? '...' : ''}}</p>
+
+              <span class="label label-olio show-map" ng-click="olio.showMap(product.pickup_location.lat,product.pickup_location.long,product.title)">
+                <span class="glyphicon glyphicon-map-marker"></span> {{ olio.distance(product.pickup_location.lat,product.pickup_location.long) | number:2}} miles
+
+                (show map)
+              </span>
+              <hr/>
+              <div class="row user-info">
+                  <div class="col-xs-3 user-image">
+                    <a href="/#/user/{{product.user.id}}"><img ng-src="{{ product.user.current_avatar.small }}" /></a>
+                  </div>
+                  <div class="col-xs-9 user-name">
+                    <a href="/#/user/{{product.user.id}}">{{product.user.first_name}}</a>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <a href="/#/request/{{product.id}}" class="btn btn-success btn-sm btn-block"><em class="glyphicon glyphicon-comment"></em> &nbsp; Request it for <strong>{{ product.price ? (product.price | currency:"£") : 'FREE' }}</strong></a>

@@ -1,0 +1,58 @@
+<div class="container" ng-controller="ProductController">
+<div class="row">
+	<div class="col-sm-6 main-product-info">
+		<h1 class="hidden-xs">{{product.title}}</h1>
+		<div class="row">
+		<div class="col-xs-3 visible-xs">
+			<h1><img class="large-image" ng-src="{{ product.photos[0].files.small }}" /></h1>
+		</div>
+		<div class="col-xs-9 visible-xs">
+			<h1 class="visible-xs">{{product.title}}</h1>
+		</div>
+		</div>
+		<hr/>
+		<p>{{product.description}}</p>
+		<div class="row">
+			<div class="col-md-6"><span class="glyphicon glyphicon-time"></span> Posted on {{product.created_at | date:'dd/MM/yyyy'}}</div>
+			<div class="col-md-6" ng-hide="product.expired"><span class="glyphicon glyphicon-trash"></span> Expires on {{product.expiry | date:'dd/MM/yyyy'}}</div>
+			<div class="col-md-6" ng-show="product.expired"><span class="glyphicon glyphicon-trash"></span> Expired on {{product.expiry | date:'dd/MM/yyyy'}}</div>
+		</div>
+		<div class="panel panel-default">
+		  <div class="well user-block">
+		    <div class="row">
+                  <div class="col-md-2 user-image">
+                    <a href="/#/user/{{product.user.id}}"><img ng-src="{{ product.user.current_avatar.small }}" /></a>
+                  </div>
+                  <div class="col-md-6 user-name">
+                    <a href="/#/user/{{product.user.id}}">{{product.user.first_name}} <span class="glyphicon glyphicon-ok-sign" ng-show="product.user.status == 'Champion'" title="Verified user"></span></a>
+                    <span class="text-muted">Status: {{product.user.status}}</span>
+                  </div>
+                  <div class="col-md-4 user-name">
+                    <span class="text-muted">Rating: {{product.user.rating.rating}}</span><br/>
+                    <span class="text-muted">Total items posted: 13</span>
+                  </div>
+		    </div>
+		  </div>
+		</div>
+		<hr/>
+		<iframe ng-src="{{olio.itemLocation(product.pickup_location.lat,product.pickup_location.long)}}" width="100%" height="280" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br/>
+		<em>{{product.collection_notes}}</em>
+		<hr/>
+		<a href="/#/request/{{product.id}}" class="btn btn-success btn-lg"><em class="glyphicon glyphicon-comment"></em> &nbsp; Request it for <strong>{{ product.price ? (product.price | currency:"£") : 'FREE' }}</strong></a>
+		<div class="row info-overlay">
+			<div class="col-xs-3">					
+	            <span ng-show="product.user_has_liked"><span class="glyphicon glyphicon-heart like-unlike"></span> I Liked it!</span>
+	            <span ng-hide="product.user_has_liked" ><span class="glyphicon glyphicon-heart-empty like-unlike"></span> Like it</span>
+			</div>
+			<div class="col-xs-4"><img src="/images/Facebook-and-Twitter-Icons-01.png" class="fb-twitt" /><span class="fb-twitt-share">Share</span></div>
+			<div class="col-xs-5"><a href><span class="glyphicon glyphicon-exclamation-sign"></span> Report a problem</a></div>
+		</div>
+	</div>
+	<div class="col-sm-6 hidden-xs">
+		<img class="large-image" ng-src="{{ product.photos[0].files.large }}" />
+	</div>
+</div>
+<hr/>
+</div>
+<add-item></add-item>
+<modal-window></modal-window>

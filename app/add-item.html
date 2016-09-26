@@ -1,0 +1,131 @@
+<div class="modal fade bs-example-modal-lg" id="addItemModal" tabindex="-1" role="dialog" aria-labelledby="addItemTitle">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="addItemTitle">Add new Item</h4>
+      </div>
+      <div class="modal-body">
+        <form name="titleForm" class="form-horizontal">
+
+
+        <input type="hidden" value="{{product.lat}}" name="latitude" />
+        <input type="hidden" value="{{product.long}}" name="longitude" />
+
+        
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="col-sm-3 control-label" for="email">Title</label>
+            <div class="col-sm-9">
+              <input name="product.title" id="productTitle" type="text" class="form-control" placeholder="Enter the title of your item" autofocus />
+            </div>
+          </div>
+        
+
+          <div class="form-group">
+            <label class="col-sm-3 control-label" for="email">Description</label>
+            <div class="col-sm-9">
+              <textarea class="form-control" name="product.description" id="productDescription" rows="3" placeholder="e.g. Quality, quantity, use by date, etc." /></textarea>
+            </div>
+          </div>
+        
+
+
+          <div class="form-group">
+            <label class="col-sm-3 control-label" for="email">Food or no?</label>
+            <div class="col-sm-3">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="product.section" id="productSection" value="food"> Food
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="product.section" value="non-food"> Non-Food
+                </label>
+              </div>
+            </div>
+            <label class="col-sm-3 control-label" for="email">Collection</label>
+            <div class="col-sm-3">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="product.pickup_location" value="my_location" ng-model="showMyLocation"> My Location
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="product.pickup_location" value="dropbox" ng-model="showMyLocation"> Dropbox
+                </label>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="form-group">
+            <label class="col-sm-3 control-label" for="email">Collection Notes</label>
+            <div class="col-sm-9">
+              <textarea class="form-control" name="product.collection_notes" rows="3" placeholder="Pick-up times, best time for call or any other information"/></textarea>
+            </div>
+          </div>
+
+
+
+          <div class="form-group">
+            <label class="col-sm-3 control-label" for="email">Collection Notes</label>
+            <div class="col-sm-3">
+              <select class="form-control">
+                <option data-ng-repeat="i in olio.numberOfDays()" value="{{$index+1}}" ng-selected="{{ $index+1 == 5 }}">{{$index+1}} Days</option>
+              </select>
+            </div>
+
+            <label class="col-sm-3 control-label" for="email">Price</label>
+            <div class="col-sm-3">
+              <input name="product.price" type="text" class="form-control" placeholder="Price (Leave empty if free of charge)" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-3 control-label" for="email">Image upload</label>
+            <div class="col-sm-6">
+              <input name="product.picture" id="productPicture" type="file" class="form-control" placeholder="Enter the title of your item" autofocus />
+            </div>
+            <div class="col-sm-3">
+              <div class="photo-preview"><span class="glyphicon glyphicon-camera"></span></div>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="col-md-6">
+
+          <div class="my-location" ng-show="showMyLocation == 'my_location'">
+            <iframe width="100%" height="480" ng-src="{{olio.locurl}}" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            <span class="help-block">This map maker above shows your location. If you want to change it, please go to <a href="#">User Configuration</a>.</span>
+          </div>
+
+
+          <div class="dropbox-locations" ng-show="showMyLocation == 'dropbox'">
+            <iframe ng-src="{{olio.dburl}}" width="100%" height="480" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            <span class="help-block">Select the Dropbox point from the map above where you would like to leave your item.</span>
+          </div>
+
+          <div class="dropbox-locations" ng-show="showMyLocation != 'dropbox' && showMyLocation != 'my_location' ">
+              <p><strong>What can I add to OLIO?</strong><br>You can add both food and non-food items.</p>
+              <p><strong>What food can I add to OLIO?</strong><br>OLIO is for anything edible, no matter if loose, raw, cooked, opened, unopened… etc. There are <a href="http://olioex.com/how-to/guidelines">guidelines</a>, but generally speaking if it’s food you would eat, then it’s okay for OLIO. For example, see what <a href="http://olioex.com/how-to/items-missed-on-olio">was added on OLIO</a> last week.</p>
+              <p><strong>What non-food items can I add on OLIO?</strong><br>You can add any non-food items that you wish (e.g. kitchen equipment, toiletries, cleaning products, cosmetics, furniture, clothes, toys etc). You are not allowed to sell any controlled substance (including but not limited to alcohol, solvents, weapons or fireworks) for which you do not hold the relevant license to do so.</p>
+
+              <span class="help-block">Many other questions can be found on <a href="http://olioex.com/how-to/faqs" target="_blank">FAQ page</a></span>
+          </div>
+
+        </div>
+
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Add Item</button>
+      </div>
+    </div>
+  </div>
+</div>
